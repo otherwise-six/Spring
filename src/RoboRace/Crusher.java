@@ -14,7 +14,13 @@ public class Crusher implements Decoration {
 		this(phase1,0);
 	}
 	
+        //see if the crusher activates and destroys the robot
+        @Override
 	public void effect(EventCounter counter, EventList events, int phase, Robot robot, Board board) {
+            if (phase == phase1 || phase == phase2) {
+                events.add(new DestroyedEvent(counter, robot.getLocation()));
+                robot.destroyed();
+            }
 	}
 	
 	public String toXMLString() {

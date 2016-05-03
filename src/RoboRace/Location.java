@@ -31,8 +31,16 @@ public class Location implements XMLObject {
 		return (tile instanceof Pit);
 	}
 	
+        //Check location information for decorations or special tiles
 	public void effect(EventCounter counter, EventList events, int phase, Robot robot, Board board) {
-	}
+            //do what the decoration dictates
+            if (decoration != null) {
+               decoration.effect(counter, events, phase, robot, board);  
+            } else {
+               tile.effect(counter, events, robot, board);
+            }
+            //counter.increase();
+        }
 	
 	public String toXMLString() {
 		String result = "<location>\n";

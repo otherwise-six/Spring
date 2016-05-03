@@ -8,9 +8,9 @@ public class CardList extends LinkedList<Card> implements XMLObject {
 	
 	public static CardList read(Reader input) {
 		XMLReader<CardList> reader = new XMLReader<CardList>();
-        reader.setXMLSchema("cards.xsd");
-        reader.setXMLNodeConverter(new CardListReader());
-        return reader.readXML(input);
+                reader.setXMLSchema("cards.xsd");
+                reader.setXMLNodeConverter(new CardListReader());
+                return reader.readXML(input);
 	}
 	
 	public String toXMLString() {

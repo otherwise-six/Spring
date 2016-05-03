@@ -18,6 +18,7 @@ public class CardHalfTurn extends Card {
 	public void execute(EventCounter counter, EventList events, Robot robot, Board board) {
             events.add(new HalfturnEvent(counter,robot.getLocation()));
             robot.halfturn();
+            counter.increase();
         }
 	
         @Override

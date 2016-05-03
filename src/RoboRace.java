@@ -21,5 +21,7 @@ public class RoboRace {
 	for (int i=0; i<nHuman; i++) {
             names[i] = GameDialogs.showInputDialog("Player #" + (i+1),"Name of Player #" + (i+1) + ":");
         };
+        GameMaster g = new GameMaster(names, nHuman);
+        g.run();
     }	   
 }

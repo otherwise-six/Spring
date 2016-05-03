@@ -21,8 +21,10 @@ public class CardMove extends Card {
         @Override
 	public void execute(EventCounter counter, EventList events, Robot robot, Board board) {
             for (int i = 0; i < steps; i++) {
+                counter.increaseStep();
                 board.step(counter,events,robot,robot.getDirection());
             }
+            counter.increase();
 	}
 	
         @Override

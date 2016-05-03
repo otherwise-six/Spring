@@ -24,6 +24,7 @@ public class CardTurn extends Card {
 	public void execute(EventCounter counter, EventList events, Robot robot, Board board) {
             events.add(new TurnEvent(counter,robot.getLocation(), clockwise));
             robot.turn(clockwise);
+            counter.increase();
 	}
 	
         @Override

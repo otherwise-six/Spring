@@ -22,9 +22,14 @@ public class Pusher implements Decoration {
 		this(direction,phase1,phase2,0);
 	}
 	
+        //Try to push a robot in a specific direction
         @Override
 	public void effect(EventCounter counter, EventList events, int phase, Robot robot, Board board) {
-	}
+            if (phase == phase1 || phase == phase2 || phase == phase3) {
+                events.add(new MoveEvent(counter, robot.getLocation(), direction));
+                robot.move(direction);
+            }
+        }
 	
         @Override
 	public String toXMLString() {

@@ -12,7 +12,9 @@ public class Belt implements Tile {
 		return direction;
 	}
 	
+        @Override
 	public void effect(EventCounter counter, EventList events, Robot robot, Board board) {
+            board.step(counter,events,robot,direction);
 	}
 	
 	public String toXMLString() {

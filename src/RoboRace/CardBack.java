@@ -17,6 +17,7 @@ public class CardBack extends Card {
         @Override
 	public void execute(EventCounter counter, EventList events, Robot robot, Board board) {
             board.step(counter,events,robot,robot.getDirection().halfturn());
+            counter.increase();
 	}
 	
         @Override

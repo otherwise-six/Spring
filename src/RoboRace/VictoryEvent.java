@@ -15,13 +15,16 @@ public class VictoryEvent extends GameEvent {
 		this(counter,p.x,p.y,name);
 	}
 	
+        @Override
 	public void execute(Board board) {
+            
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
+        @Override
 	public String toXMLString() {
 		return "<victory " + attrXMLString() + " name=\"" + name + "\"/>";
 	}
